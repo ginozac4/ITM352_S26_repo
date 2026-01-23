@@ -1,7 +1,6 @@
 # Name: Cassiddy Ginoza
 # Date: Jan. 22, 2026
 
-#PART 2
 
 # age in days
 age = 19
@@ -43,7 +42,7 @@ current_age = 19
 print(21 - current_age)
 
 
-#PART 3
+
 name = "Cassiddy Ginoza"
 age = 19
 hometown = "Honolulu, HI"

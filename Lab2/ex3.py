@@ -1,5 +1,7 @@
 # Ask the user to enter a floating point number. Square the number.
 #Print out the original number and the squared result.
+# Name: Cassiddy Ginoza
+# Date: Jan. 22, 2026
 
 
 input_value = input("Enter a floating point number: ")

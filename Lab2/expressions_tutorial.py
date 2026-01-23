@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Jan. 22, 2026
+
 #PART 2
 
 # age in days

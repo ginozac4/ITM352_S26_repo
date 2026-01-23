@@ -1,5 +1,7 @@
 #Ask user to enter a temperature in Farenheit.
 #Convert Farenheit to Celsius using the formula C = (F - 32) * 5/9
+# Name: Cassiddy Ginoza
+# Date: Jan. 22, 2026
 
 '''
 farenheit_input = input("Please enter temperature in Farenheit: ")

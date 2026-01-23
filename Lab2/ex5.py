@@ -1,5 +1,7 @@
 #Ask user to input a sentence of their choosing. 
 #Calculate length of string and print it out.
+# Name: Cassiddy Ginoza
+# Date: Jan. 22, 2026
 
 user_string = input("Please enter a sentence: ")
 string_length = len(user_string)

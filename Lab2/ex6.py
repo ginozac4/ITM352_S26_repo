@@ -1,5 +1,7 @@
 #Ask user to enter weight in pounds. Use float to convert.
 # Convert pounds to kilograms (1 pound = 0.453592 kg) and print result.
+# Name: Cassiddy Ginoza
+# Date: Jan. 22, 2026
 
 '''
 kg_to_pounds = 0.453592

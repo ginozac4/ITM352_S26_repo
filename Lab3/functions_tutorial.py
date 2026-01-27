@@ -118,4 +118,3 @@ def introduce(name, city="Unknown", age="Unknown"):
     '''using default parameters for city and age ^'''
     return f"Hello, welcome {name}! I'm so glad you're {age} years old and live in {city}."
 print(introduce("Cassiddy", age=19, city="Honolulu"))
-

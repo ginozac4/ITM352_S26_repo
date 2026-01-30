@@ -1,6 +1,8 @@
 #Define a list of survey response variables and store them in variable, then define 
 # tuple of respondent ID values. Use the .append() method to append the tuple to the 
 # list, then print out the list.
+# Name: Cassiddy Ginoza
+# Date: Jan. 29, 2026
 
 '''responses = [5, 7, 3, 8]
 respondent_ids = (1012, 1035, 1021, 1053)

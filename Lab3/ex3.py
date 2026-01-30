@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Jan. 27, 2026
+
 def sqrt(number):
     ''' Calculate the square root of a number'''
     if number < 0:

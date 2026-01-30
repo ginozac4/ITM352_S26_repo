@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Jan. 29, 2026
+
 '''import HandyMath as HM
 
 number1 = float(input("Enter the first number: "))

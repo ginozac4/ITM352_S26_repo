@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Jan. 29, 2026
+
 shopping_list = []
 
 shopping_list.append("Apples")

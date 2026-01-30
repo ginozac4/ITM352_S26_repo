@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Jan. 29, 2026
+
 responseValues = [5, 7, 3, 8]
 responseValues.append(0)
 print("After appending 0:", responseValues)

@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Jan. 27, 2026
+
 from cryptography.fernet import Fernet
 
 key = Fernet.generate_key()

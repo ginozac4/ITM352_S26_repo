@@ -28,3 +28,6 @@ def min(num1, num2):
     return num1 if num1 <= num2 else num2
 
 
+def apply_function(num1, num2, func):
+    result = func(num1, num2)
+    return f"The function {func.__name__} {num1},{num2} = {result}"

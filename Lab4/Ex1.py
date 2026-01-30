@@ -1,4 +1,6 @@
 # string manipulation examples
+# Name: Cassiddy Ginoza
+# Date: Jan. 29, 2026
 
 first = input("Enter your first name: ")
 middleIn = input("Enter your middle initial: ")

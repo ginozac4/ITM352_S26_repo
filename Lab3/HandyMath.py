@@ -1,6 +1,6 @@
 # Handy library of mathematical functions
 # Name: Cassiddy Ginoza
-# Date: Jan. 24, 2026
+# Date: Jan. 27, 2026
 
 def midpoint(num1, num2):
     ''' Calculate the midpoint between two numbers'''

@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Feb. 3, 2026
+
 sentence = input("Enter a sentence: ")
 
 # 1. Turn string into a list of words

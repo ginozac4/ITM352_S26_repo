@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Feb. 3, 2026
+
 url = input("Enter a full URL: ")
 
 cleaned_url = url.replace("http://", "").replace("https://", "").replace("www.", "")

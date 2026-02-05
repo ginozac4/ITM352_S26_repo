@@ -1,4 +1,6 @@
 # Parse through the portions of an email address
+# Name: Cassiddy Ginoza
+# Date: Feb. 3, 2026
 
 #Method 1: Using split() to separate username and domain
 email = input("Enter your email address: ")

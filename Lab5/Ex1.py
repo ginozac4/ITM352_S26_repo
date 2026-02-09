@@ -1,3 +1,6 @@
+#Name: Cassiddy Ginoza
+#Date: Feb. 5, 2026
+
 taxi_trip_info = {
     "Trip_id": "da7a62fce",
     "Trip_seconds": 360,

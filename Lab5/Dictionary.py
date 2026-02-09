@@ -1,3 +1,6 @@
+#Name: Cassiddy Ginoza
+#Date: Feb. 5, 2026
+
 country_capitals = {
     "Germany": "Berlin",
     "Canada": "Ottawa",

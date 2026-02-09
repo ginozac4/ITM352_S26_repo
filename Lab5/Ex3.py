@@ -1,3 +1,6 @@
+#Name: Cassiddy Ginoza
+#Date: Feb. 5, 2026
+
 responses = [5, 7, 3, 8]
 respondent_ids = (1012, 1035, 1021, 1053)
 

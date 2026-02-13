@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Feb. 10, 2026
+
 emotions = ("happy", "sad", "fear", "surprise")
 # conditional expression - one that looks to see if a certain condition is met
 

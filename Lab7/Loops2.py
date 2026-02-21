@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Feb. 17, 2026
+
 prices = [100, 50, 20, 356]
 
 total = 0

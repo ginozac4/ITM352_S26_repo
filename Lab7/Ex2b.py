@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Feb. 19, 2026
+
 evens = [2]
 
 num = 2

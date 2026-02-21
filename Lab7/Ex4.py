@@ -1,6 +1,9 @@
+# Name: Cassiddy Ginoza
+# Date: Feb. 19, 2026
+
 recent_purchase = [36.13, 23.87, 103.35, 22.93, 11.62]
 
-budget = 150
+budget = 50
 total_spent = 0
 
 

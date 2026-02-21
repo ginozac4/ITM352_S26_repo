@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Feb. 17, 2026
+
 health = 100
 
 while health > 0:

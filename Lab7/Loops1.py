@@ -1,3 +1,6 @@
+# Name: Cassiddy Ginoza
+# Date: Feb. 17, 2026
+
 guests = ["Alice", "Bob", "Charlie", "David", "Eve"]
 
 for guest in guests: #iterate through each item in the list and pull off one at time

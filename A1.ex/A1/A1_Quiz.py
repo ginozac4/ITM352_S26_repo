@@ -50,10 +50,12 @@ def quiz():
         if answer == correct_answer:
             print("Correct!")
             print(explanation)
-            # Requirement 7: prints the explanation when user gets the answer correct
+            # Requirement 7: prints the explanation for why the correct answer is the correct answer
             num_correct += 1
         else:
             print(f"The answer is {correct_answer}, not {answer}.")
+            print(explanation)
+            # Requirement 7: prints the explanation for why the correct answer is the correct answer
 
     print(f"You got {num_correct} out of {len(QUESTIONS)} correct.")
     

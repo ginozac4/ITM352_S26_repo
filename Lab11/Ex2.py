@@ -5,7 +5,7 @@ import pandas as pd
 import numpy as np
 import pyarrow
 
-filename = "sales_data.csv"
+filename = "https://drive.google.com/uc?id=1ujY0WCcePdotG2xdbLyeECFW9lCJ4t-K"
 
 pd.set_option('display.max_columns', None)  # Show all columns in the output
 

@@ -27,10 +27,11 @@ df['unit_price'] = pd.to_numeric(df['unit_price'], errors='coerce')
 df['sales'] = df['quantity'] * df['unit_price']  # Calculate sales as quantity multiplied by unit price
 
 pivot_table = pd.pivot_table(df,
-                                 values='sales',
-                                 index='customer_state',
-                                 columns=['customer_type', 'order_type'],
-                                 aggfunc=np.mean,
-                                 margins=True, # Add a 'Total' column and row
+                                 values='sales', # what are you calculating? 
+                                 index='customer_state', # what are the rows? (Index)
+                                 columns=['customer_type', 'order_type'], # what are the columns?
+                                 aggfunc=np.mean, # what stats are you calculating?
+                                 fill_value=0, # what do you want to show if there is no data for a cell?
+                                 margins=True, # Add a 'Total' column and row (additional summary)
                                  margins_name='Total Sales')
 print(pivot_table)

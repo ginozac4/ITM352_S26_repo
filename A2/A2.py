@@ -280,7 +280,7 @@ def create_custom_pivot_table(dataframe):
     except Exception as e:
         print(f"Error creating pivot table: {e}")
 
-# 10. TENTH FUNCTION IS EXIT PROGRAM
+# 11. ELEVENTH FUNCTION IS EXIT PROGRAM
 def exit_program(dataframe):
     print("Exiting the program. Goodbye!")
     exit(0) # this function will print a goodbye message and exit the program when called

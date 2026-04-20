@@ -32,8 +32,6 @@ def quiz():
         # this code will end and redirect to result if index is equal to length of questions
 
     if request.method == "POST": # user submits an answer from the page
-
-    # 👉 If user clicked "Next"
         if "next" in request.form:
             session["index"] += 1
 

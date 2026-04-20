@@ -1,0 +1,44 @@
+[
+    {
+        "question": "Who is the South Park character that likes Cheesy Poofs?",
+        "choices": ["Cartman", "Stan", "Kyle", "Kenny"],
+        "answer": "Cartman",
+        "explanation": "Because Cartman loves to eat Cheesy Poofs."
+    },
+    {
+        "question": "What state is South Park in?",
+        "choices": ["Colorado", "California", "Texas", "New York"],
+        "answer": "Colorado",
+        "explanation": "South Park is located in Colorado."
+    },
+    {
+        "question": "Who is the South Park character that has a dad who is a geologist?",
+        "choices": ["Stan", "Cartman", "Kyle", "Kenny"],
+        "answer": "Stan",
+        "explanation": "Stan's dad is shown as a geologist in the earlier seasons."
+    },
+    {
+        "question": "What is the name of Kyle's little brother?",
+        "choices": ["Ike", "Stan Jr.", "Cartman Jr.", "Kenny Jr."],
+        "answer": "Ike",
+        "explanation": "Kyle's little brother is Ike."
+    },
+    {
+        "question": "Who is the South Park character that has a green hat?",
+        "choices": ["Kyle", "Cartman", "Stan", "Kenny"],
+        "answer": "Kyle",
+        "explanation": "Kyle often wears a bright green hat."
+    },
+    {
+        "question": "What is the name of the teacher in South Park?",
+        "choices": ["Mr. Garrison", "Mr. Mackey", "Mr. Hankey", "Mr. Marsh"],
+        "answer": "Mr. Garrison",
+        "explanation": "The teacher in South Park is shown as Mr. Garrison."
+    },
+    {
+        "question": "Who is the South Park character that always mumbles?",
+        "choices": ["Kenny", "Cartman", "Stan", "Kyle"],
+        "answer": "Kenny",
+        "explanation": "Kenny wears a parka that covers his mouth, causing him to mumble when he talks."
+    }
+]

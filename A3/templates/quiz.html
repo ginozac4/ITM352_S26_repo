@@ -5,19 +5,32 @@
 </head>
 <body>
 
-    <h2>{{ question.question }}</h2>
+    {% if explanation %}
 
-    <form method="POST">
-        {% for choice in choices %}
-            <label>
-                <input type="radio" name="answer" value="{{ choice }}" required>
-                {{ choice }}
-            </label><br>
-        {% endfor %}
+        <h2>{{ result }}</h2>
+        <p>{{ explanation }}</p>
 
-        <br>
-        <button type="submit">Submit</button>
-    </form>
+        <form method="POST">
+            <button type="submit" name="next">Next</button>
+        </form>
+
+    {% else %}
+
+        <h2>{{ question.question }}</h2>
+
+        <form method="POST">
+            {% for choice in choices %}
+                <label>
+                    <input type="radio" name="answer" value="{{ choice }}" required>
+                    {{ choice }}
+                </label><br>
+            {% endfor %}
+
+            <br>
+            <button type="submit">Submit</button>
+        </form>
+
+    {% endif %}
 
 </body>
 </html>

@@ -16,7 +16,7 @@ def home():
 
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
-    if "index" not in session: 
+    if "index" not in session or "question_order" not in session:
         # this code initializes a session for the user if it's their first time accessing.
         session["index"] = 0
         # index is the question number.
@@ -56,15 +56,18 @@ def quiz():
     q_index = session["question_order"][session["index"]]
     q = questions[q_index]
 
-    if "choices" not in session:
-        choices = q["choices"][:]
-        # this code creates a copy of the choices list.
-        random.shuffle(choices)
-        # this code shuffles the choices.
-        session["choices"] = choices
+    choices = q["choices"][:]
+    random.shuffle(choices)
     # this code was created by AI, using the prompt "How would I use random to shuffle the choices for each question?"
 
-    return render_template("quiz.html", question=q, choices=session["choices"])
+    explanation = session.pop("explanation", None)
+
+    return render_template(
+    "quiz.html",
+    question=q,
+    choices=choices,
+    explanation=explanation
+)
 
 @app.route("/result")
 def result():

@@ -32,26 +32,36 @@ def quiz():
         # this code will end and redirect to result if index is equal to length of questions
 
     if request.method == "POST": # user submits an answer from the page
-        user_answer = request.form.get("answer") # compares user's answer to correct answer from the list.
-        if user_answer:
-            q_index = session["question_order"][session["index"]]
-            current_q = questions[q_index]  
-            # if the user submits an answer, it will retrieve the question from the 
-            # questions list by its index.
-            if user_answer == current_q["answer"]:
-                session["score"] += 1
-                # if the answer matches the current question, the session adds 1 to the score.
-            session["explanation"] = current_q["explanation"]
-            # this code provides an explanation for the answer despite whether the answer is correct.
-        session["index"] += 1
-        # the index moves on to the next question.
-        session.pop("choices", None) 
-        # this code removes the choices from the session so that a new set of choices can be shuffled for the next question,
-        # since it created a new list of choices.
 
-        if session["index"] >= len(questions):
-            return redirect(url_for("result"))
-        # this code moves to the result page if the index is equal to the length of questions list.
+    # 👉 If user clicked "Next"
+        if "next" in request.form:
+            session["index"] += 1
+
+            session.pop("explanation", None)
+            session.pop("result", None)
+
+            if session["index"] >= len(questions):
+                return redirect(url_for("result"))
+
+        else:
+            # compares user's answer to correct answer from the list.
+            user_answer = request.form.get("answer")
+
+            if user_answer:
+                q_index = session["question_order"][session["index"]]
+                current_q = questions[q_index]
+
+                # if the user submits an answer, it will retrieve the question from the
+                # questions list by its index.
+                if user_answer == current_q["answer"]:
+                    session["score"] += 1
+                    # if the answer matches the current question, the session adds 1 to the score.
+                    session["result"] = "Correct!"
+                else:
+                    session["result"] = "Wrong."
+
+                # this code provides an explanation for the answer despite whether the answer is correct.
+                session["explanation"] = current_q["explanation"]
         
     q_index = session["question_order"][session["index"]]
     q = questions[q_index]
@@ -60,13 +70,12 @@ def quiz():
     random.shuffle(choices)
     # this code was created by AI, using the prompt "How would I use random to shuffle the choices for each question?"
 
-    explanation = session.pop("explanation", None)
-
     return render_template(
-    "quiz.html",
-    question=q,
-    choices=choices,
-    explanation=explanation
+        "quiz.html",
+        question=q,
+        choices=choices,
+        explanation=session.get("explanation"),
+        result=session.get("result")
 )
 
 @app.route("/result")

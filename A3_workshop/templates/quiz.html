@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <title>Quiz</title>
 </head>
 <body>
-    <h1>Question 1: What is the capital of France?</h1>
+
+    <h1>{{ question.question }}</h1>
+
     <form method="POST">
-        <input type="radio" name="answer" value="Paris"> Paris<br>
-        <input type="radio" name="answer" value="Rome"> Rome<br>
-        <input type="radio" name="answer" value="Madrid"> Madrid<br>
-        <input type="radio" name="answer" value="Berlin"> Berlin<br>
+
+        {% for option in question.options %}
+            <input type="radio" name="answer" value="{{ option }}" {% if option == request.form['answer'] %}checked{% endif %}>
+            {{ option }}<br>
+        {% endfor %}
+
         <button type="submit">Submit Answer</button>
     </form>
+
 </body>
 </html>

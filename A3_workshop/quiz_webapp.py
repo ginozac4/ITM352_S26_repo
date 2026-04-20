@@ -1,70 +1,58 @@
-from flask import Flask, render_template, request, redirect, url_for
+from flask import Flask, render_template, request, redirect, url_for, session
+import json
 
 app = Flask(__name__)
+app.secret_key = "secret"  # Secret key for sessions
 
-def ask_question(question, options):
-   """Present a question to the user and return True if the answer is correct."""
-   print(question)
-   for letter, option in zip('abcd', options):
-       print(f"{letter}) {option}")
-  
-   while True:
-       answer = input("Your answer (a/b/c/d): ").lower()
-       if answer in 'abcd':
-           return answer == options[4]  # The correct answer is stored at index 4
-       print("Invalid input. Please enter a, b, c, or d.")
-
-
-def run_quiz(questions):
-   """Run the quiz and return the final score."""
-   score = 0
-   total_questions = len(questions)
-  
-   for i, q in enumerate(questions, 1):
-       print(f"\nQuestion {i} of {total_questions}:")
-       if ask_question(q['question'], q['options']):
-           print("Correct!")
-           score += 1
-       else:
-           print(f"Sorry, that's incorrect. The correct answer was: {q['options'][4]}")
-  
-   return score, total_questions
+# Load questions from the quiz.json file
+with open("quiz.json", "r") as f:
+    questions = json.load(f)
 
 @app.route('/')
-def home() -> str:
-    return render_template('index.html')
+def home():
+    return render_template('index.html')  # Start page
 
 @app.route('/quiz', methods=['GET', 'POST'])
 def quiz():
-    if request.method == 'POST':
-        # Logic to capture the user’s answers and redirect to the result page
-        return redirect(url_for('result'))
-    else:
-    # Load the question and options to display
-        question_number = 1
-        return render_template('quiz.html')  # Displays the question and options
+    # Initialize session if it's the first time accessing quiz
+    if "index" not in session:
+        session["index"] = 0
+        session["score"] = 0
 
-@app.route('/result')
+    # Check if the quiz has finished
+    if session["index"] >= len(questions):
+        return redirect(url_for("result"))
+
+    # Handle POST request when user submits answer
+    if request.method == "POST":
+        user_answer = request.form.get("answer")  # Use get in case it's missing
+        if user_answer:
+            current_q = questions[session["index"]]  # Current question
+
+            # Check if the user's answer is correct
+            if user_answer == current_q["answer"]:
+                session["score"] += 1  # Increment score if correct
+
+        # Move to the next question
+        session["index"] += 1
+
+        # If there are no more questions, redirect to the result page
+        if session["index"] >= len(questions):
+            return redirect(url_for("result"))
+
+    # Show the current question
+    q = questions[session["index"]]
+    return render_template("quiz.html", question=q)
+
+@app.route("/result")
 def result():
-    # Calculate and display the user's score
-    score = 4  # Example score for demonstration
-    return render_template('result.html', score=score)
+    # Get score from session and render result page
+    score = session.get("score", 0)
+    session.clear()  # Clear session after showing result
+    return render_template("result.html", score=score, total=len(questions))
 
 def main():
     app.run(debug=True)
 
-    #    questions = load_questions('quiz_questions.json')
-questions = [
-   {
-       "question": "What is the capital of France?",
-       "options": ["London", "Berlin", "Madrid", "Paris", "d"]
-   },
-   {
-       "question": "Which planet is known as the Red Planet?",
-       "options": ["Venus", "Mars", "Jupiter", "Saturn", "b"]
-   }
-]
-
-
 if __name__ == "__main__":
-   main()
+    main()

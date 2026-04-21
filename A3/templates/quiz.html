@@ -1,9 +1,52 @@
 <!DOCTYPE html>
 <html>
 <head>
+    
     <title>Quiz</title>
+    <style>
+    <!-- Parts of this code was generated using AI, with the prompt How can I create a progress bar for the quiz-->
+        .progress-container {
+            width: 100%;
+            background-color:#f3f3f3;
+            border-radius: 10px;
+            height: 20px;
+            margin-bottom: 20px;
+        }
+        .progress-bar {
+            height: 100%;
+            width: 0%;
+            background-color: #4caf50;
+            text-align: center;
+            line-height: 20px;
+            color: white;
+            border-radius: 10px;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- REQUIREMENT 1: PERSISTENT USER IDENTIFICATION AND HISTORY.  This html block welcomes back
+     the user if there is a history for that user, and welcomes new users if there is zero history. -->
+
+{% if show_history %}
+
+    {% if history %}
+        <h3>Welcome back, {{ user }} 👋</h3>
+        <p>Your last 5 scores:</p>
+        {% for s in history %}
+            <p>{{ s }}</p>
+        {% endfor %}
+    {% else %}
+        <h3>Welcome, {{ user }} 👋</h3>
+        <p>This is your first quiz!</p>
+    {% endif %}
+
+    <hr>
+{% endif %}
+
+    <div class="progress-container">
+        <div class="progress-bar" style="width: {{ progress }}%;">{{ progress|round(0) }}%</div>
+    </div>
 
     {% if explanation %}
 
@@ -16,7 +59,7 @@
 
     {% else %}
 
-        <h2>{{ question.question }}</h2>
+        <h2>{{ question["question"] }}</h2>
 
         <form method="POST">
             {% for choice in choices %}

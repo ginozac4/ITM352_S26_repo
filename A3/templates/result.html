@@ -8,8 +8,19 @@
     <h1>Quiz Finished!</h1>
 
     <p>Your score: {{ score }} out of {{ total }}</p>
+    <p> Total time taken: {{ total_time }} seconds </p>
 
     <a href="{{ url_for('home') }}">Try Again</a>
+
+    <h3>Your Entire Score History:</h3>
+
+    {% if history %}
+        {% for s in history %}
+            <p>Score: {{ s }}</p>
+        {% endfor %}
+    {% else %}
+        <p>No previous scores yet.</p>
+    {% endif %}
 
 </body>
 </html>

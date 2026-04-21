@@ -7,7 +7,7 @@
     /* Parts of this code was Parts of this code was generated using AI, with the prompt "How can I create a progress bar for the quiz?"" */
         .progress-container {
             width: 100%;
-            background-color:#f3f3f3;
+            background-color:#bd2121;
             border-radius: 10px;
             height: 20px;
             margin-bottom: 20px;
@@ -18,7 +18,7 @@
             background-color: #4caf50;
             text-align: center;
             line-height: 20px;
-            color: white;
+            color: rgb(255, 255, 255);
             border-radius: 10px;
         }
     </style>
@@ -44,8 +44,8 @@
     <hr>
 {% endif %}
 
-    <div class="progress-container">
-        <div class="progress-bar" style="width: {{ progress }} %;">{{ progress|round(0) }}%</div>
+    <div class="progress-bar" style="width: {{ progress }}%;">
+    {{ progress|round(0) }}%
     </div>
 
     {% if explanation %}

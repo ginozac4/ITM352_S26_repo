@@ -10,11 +10,18 @@
             7,
             7,
             3,
-            7
+            7,
+            3
         ]
     },
     "penguin": {
         "password": "penguinz0",
+        "history": [
+            2
+        ]
+    },
+    "cartman": {
+        "password": "cartman",
         "history": [
             2
         ]
